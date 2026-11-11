@@ -1,0 +1,5 @@
+# Keep background notification delivery deterministic in tests.
+# Tests invoke the worker explicitly with a controlled clock.
+app:
+  notifications:
+    scheduler-enabled: false

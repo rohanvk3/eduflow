@@ -1,0 +1,24 @@
+[Unit]
+Description=EduFlow ERP
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=eduflow
+Group=eduflow
+WorkingDirectory=/opt/eduflow/current
+EnvironmentFile=/etc/eduflow/backend.env
+ExecStart=/usr/bin/java -Xms256m -Xmx1024m -jar /opt/eduflow/current/backend.jar --spring.profiles.active=prod
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=45
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/eduflow/files
+
+[Install]
+WantedBy=multi-user.target

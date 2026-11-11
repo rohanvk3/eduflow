@@ -1,0 +1,17 @@
+**/target/
+**/node_modules/
+**/dist/
+.idea/
+frontend/.vite/
+.vite/
+*.log
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+.verification/
+frontend/test-results/
+frontend/playwright-report/
+/frontend-audit.json
